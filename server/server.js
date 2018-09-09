@@ -27,11 +27,12 @@ io.on('connection', (socket) => {
     //     text: 'Hey. asdasfas',
     //     createAt: 123
     // });
-    socket.emit('newMessage', {
-        from: 'Josef',
-        text: 'Hey!!!',
-        createdAt: 123
-    });
+
+    // socket.emit('newMessage', {
+    //     from: 'Josef',
+    //     text: 'Hey!!!',
+    //     createdAt: 123
+    // });
 
     // socket.on('createEmail', (newEmail) => {
     //     console.log('createEmail', newEmail);
@@ -39,7 +40,12 @@ io.on('connection', (socket) => {
 
     socket.on('createMessage', (message) => {
         console.log('Create message', message);
-    })
+        io.emit('newMessage', {
+            from: message.from,
+            text: message.text,
+            createdAt: new Date().getTime()
+        });
+    });
 
     socket.on('disconnect', () => {
         console.log('User was disconnected');
