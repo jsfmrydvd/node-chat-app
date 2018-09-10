@@ -3,20 +3,25 @@
 
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body>
-    <p>
-        Welcome to the chat app hehe
-    </p>
-    <ol id="messages">
-
-    </ol>
-    <form id="message-form">
-        <!-- <label>Enter name: </label><input name="name" type="text" placeholder="Name" /><br /> -->
-        <input name="message" type="text" placeholder="Message..." />
-        <button>Send</button>
-    </form>
-    <button id="send-location">Send Location</button>
+<body class="chat">
+    <div class="chat__sidebar">
+        <!-- <h3><img src="https://lumiere-a.akamaihd.net/v1/images/c94eed56a5e84479a2939c9172434567c0147d4f.jpeg" height="150px" width="150px"/></h3> -->
+        <h3>People</h3>
+        <div id="users"></div>
+    </div>
+    <div class="chat__main">
+        <ol id="messages" class="chat__messages"></ol>
+        <div class="chat__footer">
+            <form id="message-form">
+                <!-- <label>Enter name: </label><input name="name" type="text" placeholder="Name" /><br /> -->
+                <input name="message" type="text" placeholder="Message..." autofocus autocomplete="off"/>
+                <button>Send</button>
+            </form>
+            <button id="send-location">Send location</button>
+        </div>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/js/index.js"></script>
