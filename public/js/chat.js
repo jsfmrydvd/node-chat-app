@@ -94,6 +94,7 @@ socket.on('newLocationMessage', function(message) {
 // }, function(data) {
 //     console.log('Got it', data);
 // });
+
 jQuery('#message-form').on('submit', function (e){
     e.preventDefault();
     var messageTextbox = jQuery('[name=message]');
