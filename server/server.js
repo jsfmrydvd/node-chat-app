@@ -57,8 +57,10 @@ io.on('connection', (socket) => {
         //socket.broadcast.emit = this send message to all except for user
         //socket.emit one user
 
-        socket.emit('newMessage', generateMessage('Admin', `Welcome to the ${params.room}`));
+        socket.emit('newMessage', generateMessage('Admin', `Welcome ${params.name} to port ${port}`));
         socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', `${params.name} joined`));
+        // socket.emit('newMe1
+
         callback();
     });
     socket.on('createMessage', (message, callback) => {

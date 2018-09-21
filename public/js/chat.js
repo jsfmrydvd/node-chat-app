@@ -37,6 +37,10 @@ socket.on('connect', function() {
     //     from: 'testemail@gmail.com',
     //     text: 'something here'
     // })
+    // socket.to().broadcast('test', () =>
+    // {
+    //     console.log('test');
+    // )}
 });
 
 socket.on('disconnect', function() {
